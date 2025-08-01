@@ -72,3 +72,4 @@ Thumbs.db
 *.bak
 *.tmp
 #HELP.md # If you want to keep HELP.md, remove this line. Usually not necessary.
+bin/
