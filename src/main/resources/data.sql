@@ -2,10 +2,12 @@
 INSERT INTO todos (todo, detail, created_at, updated_at)
 VALUES
 ('買い物', 'スーパーで食材を購入する', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
 -- 2件目のデータ登録
 INSERT INTO todos (todo, detail, created_at, updated_at)
 VALUES
 ('図書館に行く', '本を借りる', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
 -- 3件目のデータ登録
 INSERT INTO todos (todo, detail, created_at, updated_at)
 VALUES
@@ -20,3 +22,48 @@ INSERT INTO authentications (username, password, authority, displayname) VALUES
 INSERT INTO authentications (username, password, authority, displayname) VALUES
  ('user', '$2a$10$/jar9xXQ6lrnVjLvLGv5BepFkLnGIO49RrGx42p2i.1hQt1BZ/7E2', 'USER', '
 一般花子');
+
+-- コメントテーブルへのダミーデータの追加（todo1）
+-- 1件目のデータ登録
+INSERT INTO comments (todo_id, content, created_at, updated_at)
+VALUES
+(1, '人参', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- 2件目のデータ登録
+INSERT INTO comments (todo_id, content, created_at, updated_at)
+VALUES
+(1, 'トマト', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- 3件目のデータ登録
+INSERT INTO comments (todo_id, content, created_at, updated_at)
+VALUES
+(1, 'ピーマン', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- コメントテーブルへのダミーデータの追加（todo2）
+-- 1件目のデータ登録
+INSERT INTO comments (todo_id, content, created_at, updated_at)
+VALUES
+(2, '本を借りる', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- 2件目のデータ登録
+INSERT INTO comments (todo_id, content, created_at, updated_at)
+VALUES
+(2, '本を返す', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+
+-- コメントテーブルへのダミーデータの追加（todo3）
+-- 1件目のデータ登録
+INSERT INTO comments (todo_id, content, created_at, updated_at)
+VALUES
+(3, 'ダンベル', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- 2件目のデータ登録
+INSERT INTO comments (todo_id, content, created_at, updated_at)
+VALUES
+(3, 'バーベル', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- 3件目のデータ登録
+INSERT INTO comments (todo_id, content, created_at, updated_at)
+VALUES
+(3, 'トレッドミル', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+

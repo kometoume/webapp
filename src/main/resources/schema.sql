@@ -1,6 +1,7 @@
 -- テーブルが存在したら削除する
 DROP TABLE IF EXISTS todos;
 DROP TABLE IF EXISTS authentications;
+DROP TABLE IF EXISTS comments;
 DROP TYPE IF EXISTS role; -- role ENUM型の削除を追加
 
 -- 権限用のENUM型
@@ -30,4 +31,17 @@ CREATE TABLE authentications (
     authority role NOT NULL,
     -- 表示名
  displayname VARCHAR(50) NOT NULL
+);
+
+-- テーブルの作成
+CREATE TABLE comments (
+    -- id（することID）：主キー
+    id serial PRIMARY KEY,
+    todo_id integer,	
+	user_id integer,
+	content text,
+    -- created_at（作成日）
+    created_at timestamp without time zone,
+    -- updated_at（更新日）
+    updated_at timestamp without time zone
 );

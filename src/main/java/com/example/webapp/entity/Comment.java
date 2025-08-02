@@ -1,10 +1,9 @@
 package com.example.webapp.entity;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,20 +15,19 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ToDo {
+public class Comment {
 	/** することID */
 	private Integer id;
-	/** すること */
-	private String todo;
-	/** すること詳細 */
-	private String detail;
+	private Integer todo_id;
+	private Integer user_id;
+	private String content;
 	/** 作成日時 */
 	private LocalDateTime createdAt;
 	/** 更新日時 */
 	private LocalDateTime updatedAt;
 
-	// ここを追加
-	@OneToMany(mappedBy = "todo", cascade = CascadeType.ALL) //1対多
-	private List<Comment> comments;
+	@ManyToOne //多対1
+	@JoinColumn(name = "todo_id", nullable = false)
+	private ToDo todo; // 外部キー (企業ID)
 
 }
